@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto');
+
+
+
+
 #headerimg
 {
     margin: 0 0 0 10%;
@@ -5,6 +10,10 @@
 body
 {
     background-color: #ffffff;
+    background-image:url(imagini/bg.jpg);
+    font-family:"Arial Black";
+    color:#000000 !important;
+
 }
 #the_stage
 {
@@ -65,4 +74,23 @@ p
 #not_a_digit
 {
 	width: 150px;
+}
+.header1{
+   position:absolute;
+   margin:10px;
+   top:0px;
+
+}
+.HeaderText{
+    font-family: 'Oswald', sans-serif;
+    	position:relative;
+	left:27vw;
+	font-size: 50px;
+    color:#17261a;
+
+}
+.hrCastra{
+	height: 6px;
+	background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+    border: 0;
 }

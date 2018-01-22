@@ -23,7 +23,18 @@
 </head>
 
 <body>
+
     <div class="container">
+
+    <header class="header1">
+    	
+    	<h1 class="HeaderText">DIGIT RECOGNIZER</h1>
+    </header>
+    <hr class="hrCastra">
+
+
+
+
 
         <div class="row clearfix">
             <div class="col-md-3" align="center">
@@ -31,14 +42,14 @@
 					<canvas id="the_stage" width="200" height="200" align="center">Canvas</canvas><br>
 					</div>
 				<div style="position: relative;">
-					<button type="button" class="btn btn-default butt" onclick="clearCanvas()" align="center">Clear</button>
-					<button type="button" class="btn btn-default butt" id="pred" onclick="predict()" align="center">Predict</button>
+					<button type="button" class="btn btn-danger butt" onclick="clearCanvas()" align="center">Sterge</button>
+					<button type="button" class="btn btn-success butt" id="pred" onclick="predict()" align="center">Prezice</button>
 					</div>
             </div>
 
             <div class="col-md-7">
 				<div class="row" id="pr">
-					<div class="col-md-8"><span id="pred_text">Prediction result:</span> <span id="rec_result"> </span></div>
+					<div class="col-md-8"><span id="pred_text">Rezultatul Prezicerii:</span> <span id="rec_result"> </span></div>
 					<div class="col-md-4"><button type="button" class="btn btn-default butt" onclick="hide_show()" id="hide_show_btn" style="display: none;">Show info</button></div>
 				</div>
 				<div class="container" id="hidable" style="display: none;">
@@ -104,13 +115,24 @@
 
         <div class="row">
             <div class="col-md-4">
-                <h2>About the app</h2>
-                <p>This app can recognize handwritten digits. Draw a digit on the canvas above and press the "Recognize" button to see a prediction. Press the "Clear" button to clear the canvas and draw a digit again. "Show more information" button reveals detailed predictions by all models.</p>
+                <h2>Despre Aplicatie</h2>
+                <p>
+                 Această aplicație poate recunoaște cifrele scrise de mână. Desenați o cifră pe canvasul de mai sus și apăsați butonul "Recunoaștere" pentru a vedea o predicție. Apăsați butonul "Șterge" pentru a șterge panza și a scrie din nou o cifră. Butonul "Afișați mai multe informații" dezvăluie predicții detaliate pentru toate modelele</p>
+                <div class="row">
+                 <div class="col-xs-6 col-md-3">
+                 <a href="#" class="thumbnail " style="width:500%; " >
+                 <img src="static/imagini/digit.jpg" alt="..." >
+                 </a>
+                 </div>
+                 
+                 </div>
             </div>
             <div class="col-md-4">
-                <h2>Collecting the data</h2>
-                <p>The drawn image is saved in a temporary folder which is emptied at the end of each session. By default, the drawn image is used to additionally train models and futher improve the prediction quality. If you don't want this to happen, uncheck the flag below and no information will be collected.</p><br>
-                <label><input id="Checkbox" name="Checkbox" type="checkbox" checked="checked">Allow to use the drawn digit for model training</label>
+                <h2>Colectarea Datelor</h2>
+                <p>
+                 Imaginea desenată este salvată într-un dosar temporar care este golit la sfârșitul fiecărei sesiuni. Implicit, imaginea desenată este utilizată pentru a instrui modele suplimentare și pentru a îmbunătăți în continuare calitatea predicției. Dacă nu doriți ca acest lucru să se întâmple, debifați pavilionul de mai jos și nu veți primi informații.</p><br>
+                <label><input id="Checkbox" name="Checkbox" type="checkbox" checked="checked">
+                                                                          Permiteți utilizarea cifrei desenate pentru antrenarea modelului</label>
             </div>
             <div class="col-md-4">
                 <h2>Models performance</h2>
@@ -118,8 +140,8 @@
 					<thead>
 						<tr>
 							<th>Model</th>
-							<th>MNIST accuracy</th>
-							<th>Worst predicted digit</th>
+							<th>Precizia MNIST </th>
+							<th>Cifra cel mai rau prezisa</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -129,7 +151,7 @@
 							<td id="fnn_bad_digit">9 (14.57%)</td>
 						</tr>
 						<tr>
-							<td>Trained FNN</td>
+							<td>FNN Antrenat</td>
 							<td id="fnn_t_mnist">62.13%</td>
 							<td id="fnn_t_bad_digit">9 (14.37%)</td>
 						</tr>
@@ -139,7 +161,7 @@
 							<td id="cnn_bad_digit">7 (25.97%)</td>
 						</tr>
 						<tr>
-							<td>TF CNN trained</td>
+							<td>TF CNN Antrenat</td>
 							<td id="cnn_t_mnist">74.27%</td>
 							<td id="cnn_t_bad_digit">9 (29.44%)</td>
 						</tr>
