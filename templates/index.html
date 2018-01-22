@@ -60,8 +60,6 @@
 									<tr>
 										<th>FNN</th>
 										<th>Trained FNN</th>
-										<th>TF CNN</th>
-										<th>TF CNN trained</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -85,10 +83,10 @@
 				</div>
 				<div class="row clearfix">
 					<div id="prediction" style="display: none;">
-						<span id="question">Is the prediction correct?</span>
-						<button type="button" class="btn btn-default butt" id="yes" onclick="positive_pred()">Yes</button>
-						<button type="button" class="btn btn-default butt" id="no" onclick="negative_pred()">No</button>
-						<button type="button" class="btn btn-default butt" id="not_a_digit" onclick="nothing()">It wasn't a number</button>
+						<span id="question">Corect?</span>
+						<button type="button" class="btn btn-default butt" id="yes" onclick="positive_pred()">Da</button>
+						<button type="button" class="btn btn-default butt" id="no" onclick="negative_pred()">Nu</button>
+						<button type="button" class="btn btn-default butt" id="not_a_digit" onclick="nothing()">Nu este o cifra</button>
 					</div>
 					<span id="answer_reaction"> </span>
 					<div id="digit_form" style="display: none;">
@@ -134,42 +132,7 @@
                 <label><input id="Checkbox" name="Checkbox" type="checkbox" checked="checked">
                                                                           Permiteți utilizarea cifrei desenate pentru antrenarea modelului</label>
             </div>
-            <div class="col-md-4">
-                <h2>Models performance</h2>
-                <table class="table">
-					<thead>
-						<tr>
-							<th>Model</th>
-							<th>Precizia MNIST </th>
-							<th>Cifra cel mai rau prezisa</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>FNN</td>
-							<td id="fnn_mnist">58.95%</td>
-							<td id="fnn_bad_digit">9 (14.57%)</td>
-						</tr>
-						<tr>
-							<td>FNN Antrenat</td>
-							<td id="fnn_t_mnist">62.13%</td>
-							<td id="fnn_t_bad_digit">9 (14.37%)</td>
-						</tr>
-						<tr>
-							<td>TF CNN</td>
-							<td id="cnn_mnist">74.69%</td>
-							<td id="cnn_bad_digit">7 (25.97%)</td>
-						</tr>
-						<tr>
-							<td>TF CNN Antrenat</td>
-							<td id="cnn_t_mnist">74.27%</td>
-							<td id="cnn_t_bad_digit">9 (29.44%)</td>
-						</tr>
-						
-					</tbody>
-				</table>
-            </div>
-        </div>
+
 
 
     </div>
