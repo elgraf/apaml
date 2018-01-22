@@ -53,7 +53,7 @@ def train():
 		digit = request.values['digit']
 		model.train(image, digit)
 
-	return 'Trained'
+	return 'Antrenat'
 	
 if __name__ == '__main__':
 	port = int(os.environ.get("PORT", 5000))

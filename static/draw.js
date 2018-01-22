@@ -230,41 +230,41 @@ function hide_show() {
     var x = document.getElementById('hidable');
     if (x.style.display === 'none') {
         x.style.display = 'block';
-		document.getElementById("hide_show_btn").innerHTML = 'Hide info'
+		document.getElementById("hide_show_btn").innerHTML = 'Ascunde info'
     } else {
         x.style.display = 'none';
-		document.getElementById("hide_show_btn").innerHTML = 'Show info'
+		document.getElementById("hide_show_btn").innerHTML = 'Arata info'
     }
 }
 
 
 function positive_pred() {
 	if (document.getElementById("Checkbox").checked == true) {
-		document.getElementById("answer_reaction").innerHTML = "Great! Thank you, the digit will be used to improve the models further.";
+		document.getElementById("answer_reaction").innerHTML = "Va multumim, cifra data se va folosi pentru antrenarea modelelor.";
 		document.getElementById("prediction").style.display = "none";
 		var digit = document.getElementById("rec_result").innerHTML;
 		var trained = train_model(digit);
 		console.log(trained)
 	} else {
-		document.getElementById("answer_reaction").innerHTML = "Cool! The app works, but you could help improving it by checking the box next time.";
+		document.getElementById("answer_reaction").innerHTML = "Fain! Aplicatia ruleaza, dar puteti bifa pentru a antrena modelele data viitoare.";
 		document.getElementById("prediction").style.display = "none";
 	}
 }
 
 function negative_pred() {
 	if (document.getElementById("Checkbox").checked == true) {
-		document.getElementById("answer_reaction").innerHTML = "This was an error! Could you please choose the correct number and submit it?";
+		document.getElementById("answer_reaction").innerHTML = "Eroare! Puteti sa alegeti cifra corecta?";
 		document.getElementById("prediction").style.display = "none";
 		document.getElementById("digit_form").style.display = "block";	
 	} else {
-		document.getElementById("answer_reaction").innerHTML = "A pity :( If only the models could use this image to correct the error...";
+		document.getElementById("answer_reaction").innerHTML = "Eroare...";
 		document.getElementById("prediction").style.display = "none";
 	}
 }
 
 function nothing() {
 	document.getElementById("prediction").style.display = "none";
-	document.getElementById("answer_reaction").innerHTML = "Well, the models on this site can recognize only digits... But you can draw anything, if you like :)";
+	document.getElementById("answer_reaction").innerHTML = "Modelele recunosc doar cifre... Dar puteti sa desenati ce doriti  :)";
 }
 
 function predict() {
@@ -276,10 +276,10 @@ function predict() {
 	document.getElementById("fnn_t1").style.color = 'gray';
 	document.getElementById("fnn_t2").style.color = 'gray';
 	document.getElementById("fnn_t3").style.color = 'gray';
-	document.getElementById("rec_result").innerHTML = "Predicting...";
+	document.getElementById("rec_result").innerHTML = "Prezicem...";
 	document.getElementById("prediction").style.display = "none";
 
-	if (document.getElementById("hide_show_btn").innerHTML == 'Hide info') {
+	if (document.getElementById("hide_show_btn").innerHTML == 'Ascunde info') {
 		document.getElementById("hidable").style.display = "block";
 	} else {
 		document.getElementById("hidable").style.display = "none";
@@ -333,7 +333,7 @@ function submit_correct_digit()
 	var digit = document.getElementById("digits");
 	var correct_digit = digit.options[digit.selectedIndex].text
 	document.getElementById("digit_form").style.display = "none";
-	document.getElementById("answer_reaction").innerHTML = "Thank you! The models should work better now.";
+	document.getElementById("answer_reaction").innerHTML = "Va multumim! Modelele sunt antrenate.";
 	
 	var trained = train_model(correct_digit);
 	console.log(trained)
@@ -344,7 +344,7 @@ function train_model(digit) {
 	var digit = digit;
 	var canvas = document.getElementById("the_stage");
 	var dataURL = canvas.toDataURL('image/jpg');
-	document.getElementById("rec_result").innerHTML = 'Training...'
+	document.getElementById("rec_result").innerHTML = 'Antrenam...'
 	$.ajax({
 		type: "POST",
 		url: "/hook3",

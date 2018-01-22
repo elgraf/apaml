@@ -150,7 +150,7 @@ class Model(object):
 
         img_array = self.process_image(image)
         if img_array is None:
-            return "Can't predict, when nothing is drawn"
+            return "Nu pot prezice, nu este desenat nimic"
         net = FNN(self.params)
         net_original = FNN(self.params_original)
 
@@ -175,7 +175,7 @@ class Model(object):
 
         np.save('models/updated_weights.npy', net.params)
 
-        return ("Weights saved")
+        return ("Ponderile sunt salvate")
 
     def select_answer(self, top_3, top_3_original):
         """
@@ -186,7 +186,7 @@ class Model(object):
         if int(top_3[0][0]) == int(top_3_original[0][0]):
             answer = str(top_3[0][0])
         elif int(top_3[0][1]) < 50 and int(top_3_original[0][1]) < 50:
-            answer = "Can't recognize this as a digit"
+            answer = "Nu pot recunoaste o cifra"
         elif int(top_3[0][0]) != int(top_3_original[0][0]):
             if int(top_3[0][1]) > int(top_3_original[0][1]):
                 answer = str(top_3[0][0])
